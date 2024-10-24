@@ -76,7 +76,7 @@ export default function Hero2() {
   return (
     <section
       id="hero2-section"
-      className="py-24"
+      className="py-20"
       style={{ backgroundColor: theme.backgroundPrimary }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

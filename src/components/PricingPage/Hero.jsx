@@ -42,7 +42,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full bg-[#033e4e] font-sans">
+    <section className="relative w-full bg-[#033e4e] font-sans py-0 pb-0 pt-0">
       {/* Main container */}
       <div
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
@@ -81,7 +81,7 @@ const Hero = () => {
           </div>
 
           {/* Right column - Logo */}
-          <div className="flex w-full items-center justify-center md:w-1/2">
+          <div className="flex w-full items-center justify-center md:w-1/2 pt-6">
             <div
               className={`transform transition-all duration-1000 ease-out ${
                 isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"

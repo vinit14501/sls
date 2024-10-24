@@ -60,7 +60,7 @@ const Pillars = () => {
   return (
     <div
       id="pillars-section"
-      className="w-full px-4 py-12 bg-white"
+      className="w-full px-4 py-16 bg-white"
     >
       <h2
         className={`text-center text-3xl md:text-4xl font-bold mb-12 text-[#033e4e] font-['Raleway'] 

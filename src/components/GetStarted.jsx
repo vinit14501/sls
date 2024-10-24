@@ -25,7 +25,7 @@ const GetStarted = () => {
 
   const layout = {
     maxWidth: "max-w-7xl",
-    padding: "py-12",
+    padding: "py-6",
     innerPadding: "py-16",
     spacing: "gap-8",
     minHeight: "min-h-[200px]",
@@ -40,7 +40,7 @@ const GetStarted = () => {
   return (
     <div
       className={`relative ${layout.padding} ${layout.minHeight} ${layout.maxHeight} 
-        ${layout.containerHeight} font-sans`}
+        ${layout.containerHeight} font-sans pt-0 pb-0`}
       role="region"
       aria-label="Get Started Section"
       style={{ backgroundColor: theme.background }}

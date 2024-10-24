@@ -69,7 +69,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`bg-[${theme.background}] font-['Raleway'] mt-auto relative overflow-hidden`}
+      className={`bg-[${theme.background}] pt-0 pb-0 font-['Raleway'] mt-auto relative overflow-hidden`}
       role="contentinfo"
     >
       {/* Decorative background elements */}
@@ -78,7 +78,7 @@ const Footer = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#b2cbd0] rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       </div> */}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-10 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-10 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Logo and Description Section */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start">
@@ -154,7 +154,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="mt-16 pt-8 border-t border-[#f4f1ec]/10">
+        <div className="mt-16 pt-4 border-t border-[#f4f1ec]/10">
           <div className="text-center items-center gap-4">
             <p className="text-[#f4f1ec]/60 text-sm">
               © {currentYear} {content.company.name}. All rights reserved.

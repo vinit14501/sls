@@ -81,7 +81,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing-section"
-      className="py-12 sm:py-16 md:py-20 lg:py-24"
+      className="py-12 sm:py-16 md:py-20 lg:py-20"
       style={{ backgroundColor: theme.backgroundPrimary }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -45,7 +45,7 @@ const Quotes = () => {
   return (
     <div
       id="quote-section"
-      className="w-full py-16 lg:py-24 bg-[#f4f1ec]"
+      className="w-full py-16 lg:py-18 pt-0 bg-[#f4f1ec]"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div

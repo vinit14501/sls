@@ -65,7 +65,7 @@ const About = () => {
   return (
     <div
       id="about-section"
-      className="w-full py-16 lg:py-24"
+      className="w-full py-16 lg:py-19"
       style={{ backgroundColor: theme.backgroundPrimary }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import { HiMenu } from "react-icons/hi"
 import { IoMdClose } from "react-icons/io"
 
-// Theme configuration - easily customizable with HEX codes
+// Theme configuration
 const theme = {
   colors: {
     primary: "#2a6f7f",
@@ -18,6 +18,12 @@ const theme = {
       text: "#033e4e",
       hoverText: "#f4f1ec",
     },
+  },
+  // Text size configuration
+  textSizes: {
+    nav: "text-xl",
+    button: "text-xl",
+    mobile: "text-xl",
   },
 }
 
@@ -42,13 +48,14 @@ const buttonConfig = {
 }
 
 // Custom NavLink Component
-const CustomNavLink = memo(({ to, children, className }) => (
+const CustomNavLink = memo(({ to, children, className, onClick }) => (
   <NavLink
     to={to}
+    onClick={onClick}
     style={({ isActive }) => ({
       color: isActive ? theme.colors.text.primary : theme.colors.text.secondary,
     })}
-    className={`font-bold text-[17px] transition-colors duration-300 hover:underline hover:text-[${theme.colors.text.primary}] ${className}`}
+    className={`font-bold ${theme.textSizes.nav} transition-colors duration-300 hover:underline hover:text-[${theme.colors.text.primary}] ${className}`}
   >
     {children}
   </NavLink>
@@ -57,12 +64,13 @@ const CustomNavLink = memo(({ to, children, className }) => (
 CustomNavLink.displayName = "CustomNavLink"
 
 // CTA Button Component
-const CTAButton = memo(({ className }) => (
+const CTAButton = memo(({ className, onClick }) => (
   <button
+    onClick={onClick}
     style={{
       backgroundColor: theme.colors.button.background,
     }}
-    className={`font-bold text-[17px] rounded-lg transition-colors duration-300 ${className}`}
+    className={`font-bold ${theme.textSizes.button} rounded-lg transition-colors duration-300 ${className}`}
   >
     <a
       href={buttonConfig.href}
@@ -96,6 +104,12 @@ const Navbar = () => {
     setIsMenuOpen((prev) => !prev)
     document.body.style.overflow = !isMenuOpen ? "hidden" : "auto"
   }, [isMenuOpen])
+
+  // Added closeMenu handler
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false)
+    document.body.style.overflow = "auto"
+  }, [])
 
   return (
     <header
@@ -160,7 +174,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div
             className="fixed inset-0 bg-black/50 lg:hidden"
-            onClick={toggleMenu}
+            onClick={closeMenu}
             aria-hidden="true"
           />
         )}
@@ -181,7 +195,7 @@ const Navbar = () => {
             className="p-4 flex justify-between items-center border-b"
           >
             <button
-              onClick={toggleMenu}
+              onClick={closeMenu}
               style={{ color: theme.colors.text.primary }}
               className="p-2 rounded-lg transition-colors duration-300"
               aria-label="Close menu"
@@ -199,12 +213,16 @@ const Navbar = () => {
               <CustomNavLink
                 key={index}
                 to={item.to}
-                className="block"
+                className={`block ${theme.textSizes.mobile}`}
+                onClick={closeMenu}
               >
                 {item.label}
               </CustomNavLink>
             ))}
-            <CTAButton className="w-full mt-4" />
+            <CTAButton
+              className="w-full mt-4"
+              onClick={closeMenu}
+            />
           </nav>
         </aside>
       </div>

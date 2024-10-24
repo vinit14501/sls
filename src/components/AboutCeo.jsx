@@ -73,11 +73,6 @@ const AboutCeo = () => {
                 alt="CEO Portrait"
                 className="w-full h-full object-cover"
               />
-              {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
-                <p className="text-white text-xl italic font-light">
-                  Transforming lives through innovative learning solutions
-                </p>
-              </div> */}
             </div>
           </div>
         </div>
