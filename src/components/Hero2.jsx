@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Hero2 = () => {
+  const navigate = useNavigate()
   // State for controlling animation visibility
   const [isVisible, setIsVisible] = useState(false)
 
@@ -142,6 +144,7 @@ const Hero2 = () => {
                   backgroundColor: theme.buttonBg,
                   color: theme.buttonText,
                 }}
+                onClick={() => navigate("/pricing")}
                 onMouseOver={(e) => {
                   e.currentTarget.style.backgroundColor = theme.buttonHoverBg
                   e.currentTarget.style.color = theme.buttonHoverText

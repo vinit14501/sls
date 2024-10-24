@@ -126,14 +126,17 @@ const AboutCeo = () => {
               </p>
             </div>
 
-            {/* New Connect Button */}
-            <button
-              className="mt-8 flex items-center gap-2 px-6 py-3 text-white rounded-lg transition-all duration-300 hover:translate-x-1"
+            {/* Connect Button with LinkedIn link */}
+            <a
+              href="https://www.linkedin.com/in/shaunafmartin/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg transition-all duration-300 hover:translate-x-1"
               style={{ backgroundColor: theme.accentColor }}
             >
               Connect with Me
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

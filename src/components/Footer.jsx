@@ -2,7 +2,6 @@ import { memo } from "react"
 import { NavLink } from "react-router-dom"
 import { FaLinkedinIn } from "react-icons/fa"
 
-// Theme and content configurations remain the same...
 const theme = {
   background: "#2a6f7f",
   text: {
@@ -33,7 +32,8 @@ const content = {
     phone: "+1 (234) 567-890",
     email: "contact@synergylearning.com",
     social: {
-      linkedin: "#",
+      linkedin:
+        "https://www.linkedin.com/company/synergy-learningsolutions/?viewAsMember=true",
     },
   },
   navigation: {
@@ -45,7 +45,6 @@ const content = {
   },
 }
 
-// FooterLink component remains the same...
 const FooterLink = memo(({ to, children, className }) => (
   <NavLink
     to={to}
@@ -62,7 +61,6 @@ const FooterLink = memo(({ to, children, className }) => (
 
 FooterLink.displayName = "FooterLink"
 
-// Main Footer Component
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
@@ -98,7 +96,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Rest of the component remains the same... */}
           <nav
             className="lg:col-span-4 flex flex-col items-center lg:items-start gap-6"
             role="navigation"
@@ -141,6 +138,8 @@ const Footer = () => {
 
             <a
               href={content.contact.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="bg-[#f4f1ec] text-[#033e4e] p-3 rounded-full hover:bg-[#b2cbd0] transition-all duration-300 hover:scale-110 hover:rotate-6"
             >
