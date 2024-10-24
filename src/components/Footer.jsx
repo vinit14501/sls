@@ -2,7 +2,7 @@ import { memo } from "react"
 import { NavLink } from "react-router-dom"
 import { FaLinkedinIn } from "react-icons/fa"
 
-// Theme configuration
+// Theme and content configurations remain the same...
 const theme = {
   background: "#2a6f7f",
   text: {
@@ -16,7 +16,6 @@ const theme = {
   },
 }
 
-// Content configuration
 const content = {
   company: {
     name: "Company Name",
@@ -46,7 +45,7 @@ const content = {
   },
 }
 
-// Footer Link Component
+// FooterLink component remains the same...
 const FooterLink = memo(({ to, children, className }) => (
   <NavLink
     to={to}
@@ -67,23 +66,21 @@ FooterLink.displayName = "FooterLink"
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
+  const handleLogoClick = () => {
+    window.location.href = "/"
+  }
+
   return (
     <footer
       className={`bg-[${theme.background}] pt-0 pb-0 font-['Raleway'] mt-auto relative overflow-hidden`}
       role="contentinfo"
     >
-      {/* Decorative background elements */}
-      {/* <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#b2cbd0] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#b2cbd0] rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-      </div> */}
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-10 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Logo and Description Section */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start">
-            <NavLink
-              to="/"
+            <button
+              onClick={handleLogoClick}
               className="block mb-6"
               aria-label="Home"
             >
@@ -95,13 +92,13 @@ const Footer = () => {
                 width={content.company.logo.width}
                 height={content.company.logo.height}
               />
-            </NavLink>
+            </button>
             <p className="text-[#f4f1ec]/90 text-center lg:text-left max-w-sm leading-relaxed mb-8">
               {content.company.description}
             </p>
           </div>
 
-          {/* Navigation Section */}
+          {/* Rest of the component remains the same... */}
           <nav
             className="lg:col-span-4 flex flex-col items-center lg:items-start gap-6"
             role="navigation"
@@ -121,7 +118,6 @@ const Footer = () => {
             ))}
           </nav>
 
-          {/* Contact and Social Section */}
           <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
             <h3 className="text-[#f4f1ec] font-bold text-xl mb-6 relative inline-block">
               Connect
@@ -153,7 +149,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright Section */}
         <div className="mt-16 pt-4 border-t border-[#f4f1ec]/10">
           <div className="text-center items-center gap-4">
             <p className="text-[#f4f1ec]/60 text-sm">

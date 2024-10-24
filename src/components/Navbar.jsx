@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import { HiMenu } from "react-icons/hi"
 import { IoMdClose } from "react-icons/io"
 
-// Theme configuration
+// Theme configuration remains the same...
 const theme = {
   colors: {
     primary: "#2a6f7f",
@@ -19,7 +19,6 @@ const theme = {
       hoverText: "#f4f1ec",
     },
   },
-  // Text size configuration
   textSizes: {
     nav: "text-xl",
     button: "text-xl",
@@ -27,13 +26,11 @@ const theme = {
   },
 }
 
-// Navigation configuration
 const navItems = [
   { to: "/", label: "About" },
   { to: "/pricing", label: "Product & Pricing" },
 ]
 
-// Logo configuration
 const logo = {
   src: "logo.png",
   alt: "Company Logo",
@@ -41,13 +38,12 @@ const logo = {
   width: "42",
 }
 
-// Button configuration
 const buttonConfig = {
   href: "#",
   text: "Book A Call",
 }
 
-// Custom NavLink Component
+// CustomNavLink and CTAButton components remain the same...
 const CustomNavLink = memo(({ to, children, className, onClick }) => (
   <NavLink
     to={to}
@@ -63,7 +59,6 @@ const CustomNavLink = memo(({ to, children, className, onClick }) => (
 
 CustomNavLink.displayName = "CustomNavLink"
 
-// CTA Button Component
 const CTAButton = memo(({ className, onClick }) => (
   <button
     onClick={onClick}
@@ -105,11 +100,14 @@ const Navbar = () => {
     document.body.style.overflow = !isMenuOpen ? "hidden" : "auto"
   }, [isMenuOpen])
 
-  // Added closeMenu handler
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false)
     document.body.style.overflow = "auto"
   }, [])
+
+  const handleLogoClick = () => {
+    window.location.href = "/"
+  }
 
   return (
     <header
@@ -149,8 +147,8 @@ const Navbar = () => {
 
         {/* Center logo */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <NavLink
-            to="/"
+          <button
+            onClick={handleLogoClick}
             className="block"
             aria-label="Home"
           >
@@ -162,15 +160,14 @@ const Navbar = () => {
               width={logo.width}
               height={logo.height}
             />
-          </NavLink>
+          </button>
         </div>
 
-        {/* Right section with CTA */}
+        {/* Rest of the component remains the same... */}
         <div className="flex items-center">
           <CTAButton className="max-lg:hidden" />
         </div>
 
-        {/* Mobile menu overlay */}
         {isMenuOpen && (
           <div
             className="fixed inset-0 bg-black/50 lg:hidden"
@@ -179,7 +176,6 @@ const Navbar = () => {
           />
         )}
 
-        {/* Mobile menu sidebar */}
         <aside
           id="mobile-menu"
           style={{ backgroundColor: theme.colors.secondary }}
