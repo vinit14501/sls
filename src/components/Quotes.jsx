@@ -88,7 +88,7 @@ const Quotes = () => {
               </div>
               <blockquote>
                 <p
-                  className="text-xl md:text-2xl text-center font-medium leading-relaxed font-playfair italic"
+                  className="text-xl md:text-2xl text-center font-medium leading-relaxed font-poppins italic"
                   style={{ color: theme.quoteText }}
                 >
                   &quot;Life sciences organizations without a strong L&D

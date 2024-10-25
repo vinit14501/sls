@@ -52,7 +52,7 @@ const AboutCeo = () => {
     >
       {/* Left Section - Image */}
       <div
-        className="w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] lg:min-h-screen relative p-6 sm:p-8"
+        className="w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] lg:max-h-screen relative p-6 sm:p-8"
         style={{ backgroundColor: theme.leftBackground }}
       >
         <div

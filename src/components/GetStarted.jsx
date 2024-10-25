@@ -76,7 +76,7 @@ const GetStarted = () => {
           >
             <div className="space-y-6">
               <h2
-                className={`font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 
+                className={`font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 
                   leading-[1.2] max-w-[25ch] transition-all ${
                     animation.duration
                   } ${animation.easing}

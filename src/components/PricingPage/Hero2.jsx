@@ -79,7 +79,10 @@ export default function Hero2() {
       className="py-20"
       style={{ backgroundColor: theme.backgroundPrimary }}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        style={{ fontFamily: '"Poppins", sans-serif' }}
+      >
         {/* Header */}
         <div
           className={`mb-14 text-center transition-all ${animation.duration} ${
@@ -92,7 +95,6 @@ export default function Hero2() {
             className="text-4xl text-center font-bold leading-[3.25rem] mb-6 max-w-max lg:max-w-3xl lg:mx-auto"
             style={{
               color: theme.headingColor,
-              fontFamily: '"Raleway", sans-serif',
             }}
           >
             Learning Accelerated Framework
@@ -110,7 +112,9 @@ export default function Hero2() {
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 -translate-x-10"
             }`}
-            style={{ transitionDelay: "150ms" }}
+            style={{
+              transitionDelay: "150ms",
+            }}
           >
             <div
               className={`flex flex-col ${theme.card.gap} ${
@@ -125,7 +129,7 @@ export default function Hero2() {
                 <h3 className="text-lg font-bold xl:text-xl text-[#033e4e]">
                   ASSESS
                 </h3>
-                <p className="text-[#033e4e] text-sm xl:text-base">
+                <p className="text-[#033e4e] sm:text-lg xl:text-base">
                   Clarify and prioritize where L&D can be optimized.
                 </p>
               </div>
@@ -156,7 +160,7 @@ export default function Hero2() {
                 <h3 className="text-lg font-bold xl:text-xl text-white">
                   ALIGN
                 </h3>
-                <p className="text-white text-sm xl:text-base">
+                <p className="text-white sm:text-lg xl:text-base">
                   Align L&D strategies to organization&apos;s innovation goals.
                 </p>
               </div>
@@ -187,7 +191,7 @@ export default function Hero2() {
                 <h3 className="text-lg font-bold xl:text-xl text-white">
                   ACHIEVE
                 </h3>
-                <p className="text-white text-sm xl:text-base">
+                <p className="text-white sm:text-lg xl:text-base">
                   Equip employees with competencies to drive innovation.
                 </p>
               </div>

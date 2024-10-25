@@ -135,17 +135,11 @@ const About = () => {
                   {/* Enhanced Content */}
                   <div className="ml-6">
                     <h3
-                      className="text-xl font-semibold mb-2"
+                      className="text-xl font-semibold mb-0"
                       style={{ color: theme.headingColor }}
                     >
                       {point.title}
                     </h3>
-                    <p
-                      className="text-lg"
-                      style={{ color: theme.textColor }}
-                    >
-                      {point.description}
-                    </p>
                   </div>
                 </div>
 

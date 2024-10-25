@@ -91,7 +91,7 @@ const Footer = () => {
                 height={content.company.logo.height}
               />
             </button>
-            <p className="text-[#f4f1ec]/90 text-center lg:text-left max-w-sm leading-relaxed mb-8">
+            <p className="text-[#f4f1ec] text-md text-center lg:text-left max-w-sm leading-relaxed mb-8">
               {content.company.description}
             </p>
           </div>
@@ -120,18 +120,18 @@ const Footer = () => {
               Connect
               <span className="absolute -bottom-2 left-0 w-1/3 h-0.5 bg-[#b2cbd0]" />
             </h3>
-            <p className="text-[#f4f1ec]/90 hover:text-[#b2cbd0] transition-colors duration-300 mb-4">
+            <p className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-4">
               {content.contact.address}
             </p>
             <a
               href={`mailto:${content.contact.email}`}
-              className="text-[#f4f1ec]/90 hover:text-[#b2cbd0] transition-colors duration-300 mb-6"
+              className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-6"
             >
               {content.contact.email}
             </a>
             <a
               href={`tel:${content.contact.phone}`}
-              className="text-[#f4f1ec]/90 hover:text-[#b2cbd0] transition-colors duration-300 mb-4"
+              className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-4"
             >
               {content.contact.phone}
             </a>

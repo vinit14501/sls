@@ -157,7 +157,7 @@ export default function About() {
           }`}
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-12"
+            className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-12"
             style={{ fontFamily: config.theme.fontFamily }}
           >
             {config.content.leftSection.title}
@@ -187,7 +187,7 @@ export default function About() {
           }`}
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
+            className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6"
             style={{
               color: config.theme.headingColor,
               fontFamily: config.theme.fontFamily,

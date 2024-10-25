@@ -41,7 +41,7 @@ const Hero = () => {
         <div className="text-center">
           {/* Headline with animation */}
           <h1
-            className={`font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight transition-all duration-1000 ease-out
+            className={`font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight tracking-tight transition-all duration-1000 ease-out
               ${
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -52,7 +52,21 @@ const Hero = () => {
               color: "#033e4e",
             }}
           >
-            Accelerating innovation for life sciences executives
+            Accelerating innovation for
+          </h1>
+          <h1
+            className={`font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight tracking-tight transition-all duration-1000 ease-out pt-6
+              ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            style={{
+              fontFamily: '"Poppins", "Merriweather", serif',
+              color: "#033e4e",
+            }}
+          >
+            life sciences executives
           </h1>
         </div>
       </div>

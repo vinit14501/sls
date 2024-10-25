@@ -63,7 +63,7 @@ const Pillars = () => {
       className="w-full px-4 py-16 bg-white"
     >
       <h2
-        className={`text-center text-3xl md:text-4xl font-bold mb-12 text-[#033e4e] font-['Raleway'] 
+        className={`text-center text-3xl md:text-4xl font-bold mb-12 text-[#033e4e] font-['Roboto'] 
           transition-all ${animation.duration} ${animation.easing}
           ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -89,12 +89,14 @@ const Pillars = () => {
             }}
           >
             <h3
-              className={`text-xl font-bold mb-4 font-['Playfair_Display'] 
+              className={`text-xl font-bold mb-4 font-['Roboto'] 
                 ${index % 2 === 0 ? "text-[#033e4e]" : "text-[#033e4e]"}`}
             >
               {pillar.title}
             </h3>
-            <p className="text-[#033e4e] flex-grow">{pillar.description}</p>
+            <p className="text-[#033e4e] text-md flex-grow font-['Roboto']">
+              {pillar.description}
+            </p>
           </div>
         ))}
       </div>
