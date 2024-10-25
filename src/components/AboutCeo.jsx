@@ -52,7 +52,7 @@ const AboutCeo = () => {
     >
       {/* Left Section - Image */}
       <div
-        className="w-full lg:w-1/2 min-h-[600px] lg:min-h-screen relative p-8 lg:p-16"
+        className="w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] lg:min-h-screen relative p-6 sm:p-8"
         style={{ backgroundColor: theme.leftBackground }}
       >
         <div
@@ -65,9 +65,9 @@ const AboutCeo = () => {
           }`}
         >
           {/* White frame container */}
-          <div className="relative h-full w-full p-7">
+          <div className="relative h-full w-full p-4 sm:p-6">
             {/* Inner image container */}
-            <div className="relative h-full w-full overflow-hidden border-8 border-white">
+            <div className="relative h-full w-full overflow-hidden border-4 sm:border-8 border-white">
               <img
                 src="ceo.png"
                 alt="CEO Portrait"
@@ -80,7 +80,7 @@ const AboutCeo = () => {
 
       {/* Right Section - Content */}
       <div
-        className="w-full lg:w-1/2 min-h-[600px] lg:min-h-screen py-16 lg:py-24 px-4 sm:px-8 lg:px-16 flex items-center"
+        className="w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] lg:min-h-screen p-6 sm:p-8 lg:p-12 flex items-center"
         style={{ backgroundColor: theme.rightBackground }}
       >
         <div
@@ -91,7 +91,7 @@ const AboutCeo = () => {
           }`}
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-12"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2"
             style={{
               color: theme.headingColor,
               fontFamily: '"Poppins", serif',
@@ -100,9 +100,19 @@ const AboutCeo = () => {
             Meet the Founder & CEO
           </h2>
 
-          <div className="space-y-8">
+          <h3
+            className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 lg:mb-6"
+            style={{
+              color: theme.accentColor,
+              fontFamily: '"Poppins", serif',
+            }}
+          >
+            Dr. Shauna F. Martin
+          </h3>
+
+          <div className="space-y-6 lg:space-y-8">
             <p
-              className="text-xl leading-relaxed"
+              className="text-lg sm:text-xl leading-relaxed"
               style={{ color: theme.textColor }}
             >
               Learning solutions leader for 3 award-winning, global CROs with a
@@ -111,13 +121,13 @@ const AboutCeo = () => {
 
             <div className="space-y-4">
               <p
-                className="text-xl font-medium"
+                className="text-lg sm:text-xl font-medium"
                 style={{ color: theme.accentColor }}
               >
                 Creator of the Synergy Evolve Method -
               </p>
               <p
-                className="text-xl leading-relaxed"
+                className="text-lg sm:text-xl leading-relaxed"
                 style={{ color: theme.textColor }}
               >
                 Over 20 years helping thousands of people use what they learn to
@@ -131,7 +141,7 @@ const AboutCeo = () => {
               href="https://www.linkedin.com/in/shaunafmartin/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg transition-all duration-300 hover:translate-x-1"
+              className="mt-6 lg:mt-8 inline-flex items-center gap-2 px-4 sm:px-6 py-3 text-white rounded-lg transition-all duration-300 hover:translate-x-1"
               style={{ backgroundColor: theme.accentColor }}
             >
               Connect with Me
