@@ -15,7 +15,6 @@ export default function About() {
       fontFamily: '"Playfair Display", serif',
     },
 
-    // Updated heights configuration for better responsive behavior
     heights: {
       mobile: {
         min: "auto",
@@ -27,7 +26,7 @@ export default function About() {
       },
       desktop: {
         min: "600px",
-        default: "calc(100vh - 80px)", // Subtracting header height
+        default: "calc(100vh - 80px)",
       },
     },
 
@@ -64,7 +63,6 @@ export default function About() {
     },
   }
 
-  // Simplified height styles with better responsive behavior
   const getHeightStyles = () => ({
     minHeight: config.heights.mobile.min,
     height: config.heights.mobile.default,
@@ -101,11 +99,11 @@ export default function About() {
   return (
     <div
       id="about-section"
-      className="w-full flex flex-col lg:flex-row min-h-screen"
+      className="w-full flex flex-col lg:flex-row"
     >
       {/* Left Section */}
       <div
-        className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 xl:p-16 flex items-start justify-center"
+        className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-12 flex items-start justify-center"
         style={{
           backgroundColor: config.theme.leftBackground,
           ...getHeightStyles(),
@@ -121,13 +119,13 @@ export default function About() {
           }`}
         >
           <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4 sm:mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: config.theme.fontFamily }}
           >
             {config.content.leftSection.title}
           </h2>
 
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-3 sm:space-y-4">
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
               {config.content.leftSection.description}
             </p>
@@ -137,7 +135,7 @@ export default function About() {
 
       {/* Right Section */}
       <div
-        className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 xl:p-16 flex items-start justify-center"
+        className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-12 flex items-start justify-center"
         style={{
           backgroundColor: config.theme.rightBackground,
           ...getHeightStyles(),
@@ -151,7 +149,7 @@ export default function About() {
           }`}
         >
           <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4 sm:mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 sm:mb-4"
             style={{
               color: config.theme.headingColor,
               fontFamily: config.theme.fontFamily,
@@ -161,18 +159,18 @@ export default function About() {
           </h2>
 
           <p
-            className="text-base sm:text-lg lg:text-xl leading-relaxed mb-4 sm:mb-6"
+            className="text-base sm:text-lg lg:text-xl leading-relaxed mb-3 sm:mb-4"
             style={{ color: config.theme.textColor }}
           >
             {config.content.rightSection.subtitle}
           </p>
 
-          <div className="space-y-3 sm:space-y-4">
-            <ul className="space-y-2 sm:space-y-3">
+          <div className="space-y-2 sm:space-y-3">
+            <ul className="space-y-2">
               {config.content.rightSection.bulletPoints.map((point, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg"
+                  className="flex items-start gap-2 text-base sm:text-lg"
                   style={{ color: config.theme.textColor }}
                 >
                   <CheckCircle2

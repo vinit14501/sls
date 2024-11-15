@@ -13,11 +13,11 @@ export default function Hero2() {
       third: "#033e4e",
     },
     card: {
-      minHeight: "min-h-[180px]",
-      maxHeight: "max-h-[250px]",
+      minHeight: "min-h-[160px]",
+      maxHeight: "max-h-[220px]",
       defaultHeight: "h-auto",
-      padding: "p-6",
-      gap: "space-y-4",
+      padding: "p-4 sm:p-5",
+      gap: "space-y-3",
     },
   }
 
@@ -54,7 +54,7 @@ export default function Hero2() {
   return (
     <section
       id="hero2-section"
-      className="py-12 sm:py-16 lg:py-20"
+      className="py-8 sm:py-12 lg:py-16"
       style={{ backgroundColor: theme.backgroundPrimary }}
     >
       <div
@@ -63,7 +63,7 @@ export default function Hero2() {
       >
         {/* Header */}
         <div
-          className={`mb-8 sm:mb-10 lg:mb-12 text-center transition-all ${
+          className={`mb-6 sm:mb-8 lg:mb-10 text-center transition-all ${
             animation.duration
           } ${animation.easing} ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -80,7 +80,7 @@ export default function Hero2() {
         </div>
 
         {/* Card grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-md sm:max-w-2xl lg:max-w-full mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-md sm:max-w-2xl lg:max-w-full mx-auto">
           {/* First card */}
           <div
             className={`relative w-full transition-all ${animation.duration} ${
