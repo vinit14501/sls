@@ -24,8 +24,6 @@ const Testimonials = () => {
         secondary: "#c5dde5",
       },
     ],
-    pointDepth: 30,
-    borderRadius: 100,
   }
 
   const testimonials = [
@@ -73,40 +71,6 @@ const Testimonials = () => {
     }
   }, [])
 
-  // Updated function to generate path with pointed corners and rounded edges
-  const getShape = (isLeft) => {
-    const depth = theme.pointDepth
-    const radius = theme.borderRadius
-
-    if (isLeft) {
-      // Point at bottom-left corner, rounded on top-right and bottom-right corners
-      return {
-        clipPath: `path('M ${radius} 0 
-                    H calc(100% - ${radius})
-                    Q 100% 0, 100% ${radius}
-                    V calc(100% - ${radius})
-                    Q 100% 100%, calc(100% - ${radius}) 100%
-                    H ${depth}
-                    L 0 100%
-                    V ${radius}
-                    Q 0 0, ${radius} 0
-                    Z')`,
-      }
-    }
-    // Point at top-right corner, rounded on top-left and bottom-left corners
-    return {
-      clipPath: `path('M 0 ${radius}
-                  Q 0 0, ${radius} 0
-                  H calc(100% - ${depth})
-                  L 100% 0
-                  V calc(100% - ${radius})
-                  Q 100% 100%, calc(100% - ${radius}) 100%
-                  H ${radius}
-                  Q 0 100%, 0 calc(100% - ${radius})
-                  Z')`,
-    }
-  }
-
   return (
     <div
       id="testimonial-section"
@@ -129,7 +93,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -143,38 +107,62 @@ const Testimonials = () => {
               <div
                 className={`flex ${
                   index % 2 === 0 ? "justify-start" : "justify-end"
-                }`}
+                } mb-6`}
               >
                 <div
-                  className="max-w-2xl p-6 hover:transform hover:scale-[1.02] transition-all duration-300"
-                  style={{
-                    backgroundColor: theme.testimonialColors[index].bg,
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.05)",
-                    ...getShape(index % 2 === 0),
-                  }}
+                  className={`max-w-2xl ${index % 2 === 0 ? "mr-12" : "ml-12"}`}
                 >
-                  <div
-                    className="text-base md:text-lg leading-relaxed mb-4"
-                    style={{ color: theme.testimonialColors[index].text }}
-                  >
-                    {testimonial.text}
-                  </div>
-
-                  <div className="flex flex-col">
-                    <p
-                      className="font-semibold"
-                      style={{ color: theme.testimonialColors[index].text }}
-                    >
-                      {testimonial.author}
-                    </p>
-                    <p
-                      className="text-sm"
+                  {/* Chat bubble with internal author info */}
+                  <div className="relative">
+                    <div
+                      className={`p-6 hover:transform hover:scale-[1.01] transition-all duration-300 rounded-2xl 
+                        ${index % 2 === 0 ? "rounded-tl-sm" : "rounded-tr-sm"}`}
                       style={{
-                        color: theme.testimonialColors[index].secondary,
+                        backgroundColor: theme.testimonialColors[index].bg,
+                        color: theme.testimonialColors[index].text,
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
                       }}
                     >
-                      {testimonial.position} • {testimonial.company}
-                    </p>
+                      <div className="text-base leading-relaxed mb-4">
+                        {testimonial.text}
+                      </div>
+
+                      {/* Divider line */}
+                      <div
+                        className="h-px w-full my-4"
+                        style={{
+                          backgroundColor:
+                            theme.testimonialColors[index].secondary,
+                          opacity: 0.2,
+                        }}
+                      />
+
+                      {/* Author info */}
+                      <div className="flex flex-col">
+                        <p className="font-semibold text-sm">
+                          {testimonial.author}
+                        </p>
+                        <p
+                          className="text-xs"
+                          style={{
+                            color: theme.testimonialColors[index].secondary,
+                          }}
+                        >
+                          {testimonial.position} • {testimonial.company}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Chat bubble tail */}
+                    <div
+                      className={`absolute top-0 w-4 h-4 
+                        ${index % 2 === 0 ? "-left-2" : "-right-2"}`}
+                      style={{
+                        backgroundColor: theme.testimonialColors[index].bg,
+                        transform: "rotate(45deg)",
+                        marginTop: "12px",
+                      }}
+                    />
                   </div>
                 </div>
               </div>
