@@ -41,7 +41,7 @@ const Hero = () => {
         <div className="text-center">
           {/* Headline with animation */}
           <h1
-            className={`font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight tracking-tight transition-all duration-1000 ease-out
+            className={`font-serif font-extrabold text-3xl sm:text-3xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight tracking-tight transition-all duration-1000 ease-out
               ${
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -55,7 +55,7 @@ const Hero = () => {
             Accelerating innovation for
           </h1>
           <h1
-            className={`font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight tracking-tight transition-all duration-1000 ease-out pt-6
+            className={`font-serif font-extrabold text-3xl sm:text-3xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight tracking-tight transition-all duration-1000 ease-out lg:pt-6
               ${
                 isVisible
                   ? "opacity-100 translate-y-0"

@@ -4,9 +4,7 @@ import { CheckCircle2 } from "lucide-react"
 export default function About() {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Comprehensive configuration object
   const config = {
-    // Theme configuration
     theme: {
       leftBackground: "#2a6f7f",
       rightBackground: "#e6dfd5",
@@ -17,47 +15,22 @@ export default function About() {
       fontFamily: '"Playfair Display", serif',
     },
 
-    // Height configuration
+    // Updated heights configuration for better responsive behavior
     heights: {
       mobile: {
-        left: {
-          min: "400px",
-          max: "600px",
-          default: "450px",
-        },
-        right: {
-          min: "400px",
-          max: "600px",
-          default: "450px",
-        },
+        min: "auto",
+        default: "auto",
       },
       tablet: {
-        left: {
-          min: "450px",
-          max: "650px",
-          default: "500px",
-        },
-        right: {
-          min: "450px",
-          max: "650px",
-          default: "500px",
-        },
+        min: "auto",
+        default: "auto",
       },
       desktop: {
-        left: {
-          min: "60vh",
-          max: "80vh",
-          default: "70vh",
-        },
-        right: {
-          min: "60vh",
-          max: "80vh",
-          default: "70vh",
-        },
+        min: "600px",
+        default: "calc(100vh - 80px)", // Subtracting header height
       },
     },
 
-    // Content configuration
     content: {
       leftSection: {
         title: "What is Synergy Evolve?",
@@ -76,7 +49,6 @@ export default function About() {
       },
     },
 
-    // Animation configuration
     animation: {
       duration: "duration-1000",
       easing: "ease-out",
@@ -84,7 +56,6 @@ export default function About() {
       threshold: 0.1,
     },
 
-    // Responsive breakpoints
     breakpoints: {
       sm: "640px",
       md: "768px",
@@ -93,20 +64,13 @@ export default function About() {
     },
   }
 
-  // Height style generator
-  const getHeightStyles = (side) => ({
-    minHeight: config.heights.mobile[side].min,
-    maxHeight: config.heights.mobile[side].max,
-    height: config.heights.mobile[side].default,
-    [`@media (min-width: ${config.breakpoints.sm})`]: {
-      minHeight: config.heights.tablet[side].min,
-      maxHeight: config.heights.tablet[side].max,
-      height: config.heights.tablet[side].default,
-    },
+  // Simplified height styles with better responsive behavior
+  const getHeightStyles = () => ({
+    minHeight: config.heights.mobile.min,
+    height: config.heights.mobile.default,
     [`@media (min-width: ${config.breakpoints.lg})`]: {
-      minHeight: config.heights.desktop[side].min,
-      maxHeight: config.heights.desktop[side].max,
-      height: config.heights.desktop[side].default,
+      minHeight: config.heights.desktop.min,
+      height: config.heights.desktop.default,
     },
   })
 
@@ -137,18 +101,18 @@ export default function About() {
   return (
     <div
       id="about-section"
-      className="w-full flex flex-col lg:flex-row"
+      className="w-full flex flex-col lg:flex-row min-h-screen"
     >
       {/* Left Section */}
       <div
-        className="w-full lg:w-1/2 px-8 lg:px-16 flex items-start pt-16"
+        className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 xl:p-16 flex items-start justify-center"
         style={{
           backgroundColor: config.theme.leftBackground,
-          ...getHeightStyles("left"),
+          ...getHeightStyles(),
         }}
       >
         <div
-          className={`w-full max-w-2xl mx-auto text-white transition-all ${
+          className={`w-full max-w-2xl text-white transition-all ${
             config.animation.duration
           } ${config.animation.easing} ${
             isVisible
@@ -157,14 +121,14 @@ export default function About() {
           }`}
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4 sm:mb-6"
             style={{ fontFamily: config.theme.fontFamily }}
           >
             {config.content.leftSection.title}
           </h2>
 
-          <div className="space-y-6">
-            <p className="text-xl leading-relaxed">
+          <div className="space-y-4 sm:space-y-6">
+            <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
               {config.content.leftSection.description}
             </p>
           </div>
@@ -173,21 +137,21 @@ export default function About() {
 
       {/* Right Section */}
       <div
-        className="w-full lg:w-1/2 px-4 sm:px-8 lg:px-16 flex items-start pt-16"
+        className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 xl:p-16 flex items-start justify-center"
         style={{
           backgroundColor: config.theme.rightBackground,
-          ...getHeightStyles("right"),
+          ...getHeightStyles(),
         }}
       >
         <div
-          className={`w-full max-w-2xl mx-auto transition-all ${
+          className={`w-full max-w-2xl transition-all ${
             config.animation.duration
           } ${config.animation.easing} ${
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           }`}
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4 sm:mb-6"
             style={{
               color: config.theme.headingColor,
               fontFamily: config.theme.fontFamily,
@@ -197,18 +161,18 @@ export default function About() {
           </h2>
 
           <p
-            className="text-xl leading-relaxed mb-6"
+            className="text-base sm:text-lg lg:text-xl leading-relaxed mb-4 sm:mb-6"
             style={{ color: config.theme.textColor }}
           >
             {config.content.rightSection.subtitle}
           </p>
 
-          <div className="space-y-4">
-            <ul className="space-y-3">
+          <div className="space-y-3 sm:space-y-4">
+            <ul className="space-y-2 sm:space-y-3">
               {config.content.rightSection.bulletPoints.map((point, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-3 text-lg"
+                  className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg"
                   style={{ color: config.theme.textColor }}
                 >
                   <CheckCircle2
