@@ -18,9 +18,8 @@ const theme = {
 const content = {
   company: {
     name: "Enlinque Consulting LLC",
-    // description: "Synergy Learning Solutions LLC",
     logo: {
-      src: "2.png", // Updated to match Navbar
+      src: "2.png",
       alt: "Company Logo",
       height: "42",
       width: "42",
@@ -77,23 +76,22 @@ const Footer = () => {
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo and Description Section */}
           <div className="flex flex-col items-center md:items-start md:pl-0">
             <button
               onClick={handleLogoClick}
-              className="flex items-center gap-1 mb-6 -ml-4 md:-ml-2" // Added negative margin to shift left
+              className="flex items-center gap-2 sm:gap-3 mb-6"
               aria-label="Home"
             >
               <img
                 src={content.company.logo.src}
                 alt={content.company.logo.alt}
-                className="h-16 w-auto brightness-200 filter object-contain"
+                className="h-12 sm:h-14 md:h-16 w-auto brightness-200 filter object-contain"
                 loading="lazy"
                 width={content.company.logo.width}
                 height={content.company.logo.height}
               />
               <div
-                className="hidden md:block font-['Caveat'] text-2xl font-bold"
+                className="font-['Caveat'] text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap"
                 style={{
                   color: theme.text.primary,
                   transform: "rotate(-2deg)",
@@ -104,7 +102,6 @@ const Footer = () => {
             </button>
           </div>
 
-          {/* Navigation Section */}
           <nav
             className="flex flex-col items-center md:items-start gap-4"
             role="navigation"
@@ -124,7 +121,6 @@ const Footer = () => {
             ))}
           </nav>
 
-          {/* Contact Section */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-[#f4f1ec] font-bold text-xl mb-6 relative inline-block">
               Connect

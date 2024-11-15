@@ -142,23 +142,22 @@ const Navbar = () => {
           </nav>
         </div>
 
-        {/* Center logo section with reduced gap */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1">
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
           <button
             onClick={handleLogoClick}
-            className="flex items-center gap-1"
+            className="flex items-center gap-2 sm:gap-3 px-1 sm:px-2"
             aria-label="Home"
           >
             <img
               src={logo.src}
               alt={logo.alt}
-              className="h-16 w-auto brightness-200 filter object-contain"
+              className="h-12 sm:h-14 md:h-16 w-auto brightness-200 filter object-contain"
               loading="eager"
               width={logo.width}
               height={logo.height}
             />
             <div
-              className="hidden md:block font-['Caveat'] text-2xl font-bold"
+              className="font-['Caveat'] text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap"
               style={{
                 color: theme.colors.text.primary,
                 transform: "rotate(-2deg)",
