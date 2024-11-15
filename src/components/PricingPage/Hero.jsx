@@ -30,7 +30,7 @@ const Hero = () => {
     title: "Synergy Evolve",
     description:
       "Transform your business with our proven framework delivering consistent, measurable results",
-    logoSrc: "logo.png",
+    logoSrc: "3.png",
     logoAlt: "Synergy Evolve Logo",
     bgImage: "hero.jpg",
   }
@@ -96,11 +96,11 @@ const Hero = () => {
               }`}
             >
               {/* Logo container with responsive sizing */}
-              <div className="rounded-sm bg-[#f4f1ec] p-6 shadow-lg transition-transform duration-300 hover:scale-105">
+              <div className="rounded-sm bg-[#f4f1ec] p-1 shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
                   src={content.logoSrc}
                   alt={content.logoAlt}
-                  className="h-28 w-28 object-contain sm:h-32 sm:w-32 md:h-36 md:w-36"
+                  className="h-28 w-28 object-contain sm:h-32 sm:w-32 md:h-40 md:w-40"
                 />
               </div>
             </div>
