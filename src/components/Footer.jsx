@@ -17,20 +17,21 @@ const theme = {
 
 const content = {
   company: {
-    name: "Company Name",
-    description: "Synergy Learning Solutions LLC",
+    name: "Enlinque Consulting LLC",
+    // description: "Synergy Learning Solutions LLC",
     logo: {
-      src: "logo.png",
+      src: "2.png", // Updated to match Navbar
       alt: "Company Logo",
       height: "42",
       width: "42",
     },
   },
   contact: {
-    address:
-      "5540 Centerview Drive, Suite 204, Raleigh, North Carolina 27606-8012 United States",
-    phone: "+1 (234) 567-890",
-    email: "contact@synergylearning.com",
+    address: "Synergy Learning Solutions LLC  ",
+    address2:
+      "5540 Centerview Drive, Suite 204 Raleigh, North Carolina 27606-8012",
+    phone: "+1(919)473-9193",
+    email: "shauna_martin@synergy-learningsolutions.com",
     social: {
       linkedin:
         "https://www.linkedin.com/company/synergy-learningsolutions/?viewAsMember=true",
@@ -41,6 +42,7 @@ const content = {
     items: [
       { to: "/", label: "About" },
       { to: "/pricing", label: "Product & Pricing" },
+      { to: "/testimonial", label: "Testimoials" },
     ],
   },
 }
@@ -73,13 +75,13 @@ const Footer = () => {
       className={`bg-[${theme.background}] pt-0 pb-0 font-['Raleway'] mt-auto relative overflow-hidden`}
       role="contentinfo"
     >
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-10 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description Section */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-start">
+          <div className="flex flex-col items-center md:items-start md:pl-0">
             <button
               onClick={handleLogoClick}
-              className="block mb-6"
+              className="flex items-center gap-1 mb-6 -ml-4 md:-ml-2" // Added negative margin to shift left
               aria-label="Home"
             >
               <img
@@ -90,14 +92,21 @@ const Footer = () => {
                 width={content.company.logo.width}
                 height={content.company.logo.height}
               />
+              <div
+                className="hidden md:block font-['Caveat'] text-2xl font-bold"
+                style={{
+                  color: theme.text.primary,
+                  transform: "rotate(-2deg)",
+                }}
+              >
+                Synergy Learning Solutions
+              </div>
             </button>
-            <p className="text-[#f4f1ec] text-md text-center lg:text-left max-w-sm leading-relaxed mb-8">
-              {content.company.description}
-            </p>
           </div>
 
+          {/* Navigation Section */}
           <nav
-            className="lg:col-span-4 flex flex-col items-center lg:items-start gap-6"
+            className="flex flex-col items-center md:items-start gap-4"
             role="navigation"
             aria-label="Footer navigation"
           >
@@ -115,26 +124,32 @@ const Footer = () => {
             ))}
           </nav>
 
-          <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
+          {/* Contact Section */}
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="text-[#f4f1ec] font-bold text-xl mb-6 relative inline-block">
               Connect
               <span className="absolute -bottom-2 left-0 w-1/3 h-0.5 bg-[#b2cbd0]" />
             </h3>
-            <p className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-4">
-              {content.contact.address}
-            </p>
-            <a
-              href={`mailto:${content.contact.email}`}
-              className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-6"
-            >
-              {content.contact.email}
-            </a>
-            <a
-              href={`tel:${content.contact.phone}`}
-              className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-4"
-            >
-              {content.contact.phone}
-            </a>
+            <address className="text-center md:text-left not-italic">
+              <p className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-1">
+                {content.contact.address}
+              </p>
+              <p className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-4">
+                {content.contact.address2}
+              </p>
+              <a
+                href={`mailto:${content.contact.email}`}
+                className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-6 block whitespace-nowrap"
+              >
+                {content.contact.email}
+              </a>
+              <a
+                href={`tel:${content.contact.phone}`}
+                className="text-[#f4f1ec] hover:text-[#b2cbd0] transition-colors duration-300 mb-4 block"
+              >
+                {content.contact.phone}
+              </a>
+            </address>
 
             <a
               href={content.contact.social.linkedin}

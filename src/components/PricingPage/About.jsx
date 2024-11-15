@@ -17,42 +17,42 @@ export default function About() {
       fontFamily: '"Playfair Display", serif',
     },
 
-    // Enhanced height configuration
+    // Height configuration
     heights: {
       mobile: {
         left: {
-          min: "600px",
-          max: "800px",
-          default: "600px",
+          min: "400px",
+          max: "600px",
+          default: "450px",
         },
         right: {
-          min: "600px",
-          max: "800px",
-          default: "600px",
+          min: "400px",
+          max: "600px",
+          default: "450px",
         },
       },
       tablet: {
         left: {
-          min: "700px",
-          max: "900px",
-          default: "800px",
+          min: "450px",
+          max: "650px",
+          default: "500px",
         },
         right: {
-          min: "700px",
-          max: "900px",
-          default: "800px",
+          min: "450px",
+          max: "650px",
+          default: "500px",
         },
       },
       desktop: {
         left: {
-          min: "100vh",
-          max: "120vh",
-          default: "100vh",
+          min: "60vh",
+          max: "80vh",
+          default: "70vh",
         },
         right: {
-          min: "100vh",
-          max: "120vh",
-          default: "100vh",
+          min: "60vh",
+          max: "80vh",
+          default: "70vh",
         },
       },
     },
@@ -141,7 +141,7 @@ export default function About() {
     >
       {/* Left Section */}
       <div
-        className="w-full lg:w-1/2 p-8 lg:p-16 flex items-center"
+        className="w-full lg:w-1/2 px-8 lg:px-16 flex items-start pt-16"
         style={{
           backgroundColor: config.theme.leftBackground,
           ...getHeightStyles("left"),
@@ -157,13 +157,13 @@ export default function About() {
           }`}
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-12"
+            className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6"
             style={{ fontFamily: config.theme.fontFamily }}
           >
             {config.content.leftSection.title}
           </h2>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             <p className="text-xl leading-relaxed">
               {config.content.leftSection.description}
             </p>
@@ -173,7 +173,7 @@ export default function About() {
 
       {/* Right Section */}
       <div
-        className="w-full lg:w-1/2 py-16 lg:py-24 px-4 sm:px-8 lg:px-16 flex items-center"
+        className="w-full lg:w-1/2 px-4 sm:px-8 lg:px-16 flex items-start pt-16"
         style={{
           backgroundColor: config.theme.rightBackground,
           ...getHeightStyles("right"),
@@ -197,14 +197,14 @@ export default function About() {
           </h2>
 
           <p
-            className="text-xl leading-relaxed mb-8"
+            className="text-xl leading-relaxed mb-6"
             style={{ color: config.theme.textColor }}
           >
             {config.content.rightSection.subtitle}
           </p>
 
-          <div className="space-y-6">
-            <ul className="space-y-4">
+          <div className="space-y-4">
+            <ul className="space-y-3">
               {config.content.rightSection.bulletPoints.map((point, index) => (
                 <li
                   key={index}

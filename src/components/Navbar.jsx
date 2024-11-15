@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom"
 import { HiMenu } from "react-icons/hi"
 import { IoMdClose } from "react-icons/io"
 
-// Theme configuration remains the same...
 const theme = {
   colors: {
     primary: "#2a6f7f",
@@ -29,10 +28,11 @@ const theme = {
 const navItems = [
   { to: "/", label: "About" },
   { to: "/pricing", label: "Product & Pricing" },
+  { to: "/testimonial", label: "Testimonials" },
 ]
 
 const logo = {
-  src: "logo.png",
+  src: "2.png",
   alt: "Company Logo",
   height: "42",
   width: "42",
@@ -43,7 +43,6 @@ const buttonConfig = {
   text: "Book A Call",
 }
 
-// CustomNavLink and CTAButton components remain the same...
 const CustomNavLink = memo(({ to, children, className, onClick }) => (
   <NavLink
     to={to}
@@ -91,7 +90,6 @@ const CTAButton = memo(({ className, onClick }) => (
 
 CTAButton.displayName = "CTAButton"
 
-// Main Navbar Component
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -116,7 +114,6 @@ const Navbar = () => {
       role="banner"
     >
       <div className="h-20 px-4 sm:px-10 flex items-center justify-between relative">
-        {/* Left section with navigation */}
         <div className="flex items-center">
           <button
             onClick={toggleMenu}
@@ -145,11 +142,11 @@ const Navbar = () => {
           </nav>
         </div>
 
-        {/* Center logo */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* Center logo section with reduced gap */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1">
           <button
             onClick={handleLogoClick}
-            className="block"
+            className="flex items-center gap-1"
             aria-label="Home"
           >
             <img
@@ -160,10 +157,18 @@ const Navbar = () => {
               width={logo.width}
               height={logo.height}
             />
+            <div
+              className="hidden md:block font-['Caveat'] text-2xl font-bold"
+              style={{
+                color: theme.colors.text.primary,
+                transform: "rotate(-2deg)",
+              }}
+            >
+              Synergy Learning Solutions
+            </div>
           </button>
         </div>
 
-        {/* Rest of the component remains the same... */}
         <div className="flex items-center">
           <CTAButton className="max-lg:hidden" />
         </div>

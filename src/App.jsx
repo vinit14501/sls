@@ -3,6 +3,7 @@ import AboutPage from "./pages/AboutPage"
 import ProductPricing from "./pages/ProductPricing"
 import Layout from "./components/Layout"
 import ScrollToTop from "./components/ScrollToTop"
+import TestimonialPage from "./pages/TestimonialPage"
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/pricing",
         element: <ProductPricing />,
+      },
+      {
+        path: "/testimonial",
+        element: <TestimonialPage />,
       },
     ],
   },

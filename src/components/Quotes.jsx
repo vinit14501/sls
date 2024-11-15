@@ -97,6 +97,12 @@ const Quotes = () => {
                   all life sciences executives report that employee skill gaps
                   are a major barrier to innovation.&quot;
                 </p>
+                <p
+                  className="text-xl md:text-2xl text-center font-medium leading-relaxed font-poppins italic"
+                  style={{ color: theme.quoteText }}
+                >
+                  - PwC
+                </p>
               </blockquote>
             </div>
           </div>

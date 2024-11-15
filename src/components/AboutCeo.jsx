@@ -52,11 +52,11 @@ const AboutCeo = () => {
     >
       {/* Left Section - Image */}
       <div
-        className="w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] lg:max-h-screen relative p-6 sm:p-8"
+        className="w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] lg:min-h-screen relative p-6"
         style={{ backgroundColor: theme.leftBackground }}
       >
         <div
-          className={`h-full transition-all ${animation.duration} ${
+          className={`h-full w-full transition-all ${animation.duration} ${
             animation.easing
           } ${
             isVisible
@@ -65,11 +65,11 @@ const AboutCeo = () => {
           }`}
         >
           {/* White frame container */}
-          <div className="relative h-full w-full p-4 sm:p-6">
+          <div className="h-full w-full p-4 sm:p-6">
             {/* Inner image container */}
-            <div className="relative h-full w-full overflow-hidden border-4 sm:border-8 border-white">
+            <div className="h-full w-full overflow-hidden border-4 sm:border-8 border-white">
               <img
-                src="ceo.png"
+                src="ceo.jfif"
                 alt="CEO Portrait"
                 className="w-full h-full object-cover"
               />
@@ -91,7 +91,7 @@ const AboutCeo = () => {
           }`}
         >
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-2"
             style={{
               color: theme.headingColor,
               fontFamily: '"Poppins", serif',
@@ -101,7 +101,7 @@ const AboutCeo = () => {
           </h2>
 
           <h3
-            className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 lg:mb-6"
+            className="text-base sm:text-xl md:text-2xl lg:text-3xl mb-4 lg:mb-6"
             style={{
               color: theme.accentColor,
               fontFamily: '"Poppins", serif',
@@ -112,27 +112,31 @@ const AboutCeo = () => {
 
           <div className="space-y-6 lg:space-y-8">
             <p
-              className="text-lg sm:text-xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed"
               style={{ color: theme.textColor }}
             >
-              Learning solutions leader for 3 award-winning, global CROs with a
-              doctorate in educational leadership.
+              I&apos;m a classroom teacher turned 6-figure learning strategy
+              leader for 3 award-winning, global contract research organizations
+              (CROs). Over the past 20 years, I have helped over 4000 people
+              apply their learning in ways that get results. My passion is
+              helping others bridge the gap between learning and doing, and now
+              I&apos;m fulfilling my passion in an industry dedicated to driving
+              innovative therapeutic discoveries that save lives.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-6 lg:space-y-8">
               <p
-                className="text-lg sm:text-xl font-medium"
-                style={{ color: theme.accentColor }}
-              >
-                Creator of the Synergy Evolve Method -
-              </p>
-              <p
-                className="text-lg sm:text-xl leading-relaxed"
+                className="text-base sm:text-lg md:text-xl lg:text-xl leading-relaxed"
                 style={{ color: theme.textColor }}
               >
-                Over 20 years helping thousands of people use what they learn to
-                make a transformative impact in their lives and in the lives of
-                others.
+                The life sciences executives that I have worked with know that I
+                excel at tailoring learning strategy to meet their team&apos;s
+                unique needs. I use the Synergy Evolve method to assess where
+                their team&apos;s training gaps are and develop a plan for
+                closing those gaps. In addition, driving quality is at the
+                forefront of my Synergy Evolve method; so, CEOs and executives
+                never have to worry about the quality of their deliverables
+                diminishing in order to close employee skill gaps.
               </p>
             </div>
 
@@ -144,7 +148,7 @@ const AboutCeo = () => {
               className="mt-6 lg:mt-8 inline-flex items-center gap-2 px-4 sm:px-6 py-3 text-white rounded-lg transition-all duration-300 hover:translate-x-1"
               style={{ backgroundColor: theme.accentColor }}
             >
-              Connect with Me
+              <span className="text-base sm:text-lg">Connect with Me</span>
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>
